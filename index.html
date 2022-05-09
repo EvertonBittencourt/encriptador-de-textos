@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;1,500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <img class="logo" src="./svg/Vector.svg">
+    </header>
+    
+    <main>
+
+        <div class="principal">
+            <textarea class="text-input" type="text" name="input-texto" id="input-text" placeholder="Insira o texto aqui"></textarea>
+            
+        </div>
+
+        <div class="retorno">
+
+            <div id="nEncontrado">
+
+                <img src="./svg/menino.svg" alt="detetive com lupa">
+                <h1>Nenhuma mensagem encontrada</h1>
+                <p>Digite um texto que você deseja criptografar ou descriptografar</p>
+
+            </div>
+
+            <div>
+
+                <textarea class="resultado" name="resultado" id="resultado1"></textarea>
+
+            </div>
+
+        </div>
+
+        <div class="instruction">
+
+            <div class="buttons">
+
+                 <div class="warning">
+
+                     <img src="./svg/warning.svg" alt="simbolo de aviso">
+                     <p>Apenas letras minúsculas e sem acento</p>
+
+                 </div>
+
+                    <button id="encripta">Criptografar</button>
+                    <button id="descripta">Descriptografar</button>
+                    <button id="copiar">Copiar</button>
+            </div>
+
+         </div>
+
+    </main>
+
+    <script src="./js/script.js"></script>
+
+</body>
+</html>
