@@ -7,6 +7,20 @@ function criptografar() {
 
     let texto = document.getElementById('input-text').value
 
+    // criando uma função para validar se há texto
+    function validaTexto() {
+        if (texto == '') {
+            throw new Error ('É obrigatório ter uma palavra')
+        } 
+    }
+
+    try {
+        validaTexto()
+    } catch (error) {
+        alert (error.message)
+    }
+
+    // criando a variável responsável por trocar as palavras
     let novoTexto = texto.replace(/e/g, "enter")
     .replace(/i/g, "imes")
     .replace(/a/g, "ai")
@@ -16,10 +30,18 @@ function criptografar() {
     resultado1.innerHTML =  novoTexto
 
     // desabilitando a imagem do detetive após a criptografia ser realizada
-    nEncontrado.classList.add("hide");
+    if (texto == ''){
+    nEncontrado.classList.remove('hide');
+    } else {
+        nEncontrado.classList.add('hide');
+    }
 
     // botão copiar aparece após a criptografia ser realizada
+    if (texto == ''){
+    let copy = document.getElementById('copiar').style.display = "none"
+    } else {
     let copy = document.getElementById('copiar').style.display = "initial"
+    }
 
 }
 
@@ -27,6 +49,7 @@ function criptografar() {
 function descriptografar() {
 
     let texto = document.getElementById('input-text').value
+
     let voltaTexto = texto.replace(/enter/g, "e")
     .replace(/imes/g, "i")
     .replace(/ai/g, "a")
@@ -34,7 +57,7 @@ function descriptografar() {
     .replace(/ufat/g, "u");
 
     resultado1.innerHTML =  voltaTexto
-
+    
 }
 
 function copiar() {
@@ -43,7 +66,6 @@ function copiar() {
     let copiado = copiar.value
     navigator.clipboard.writeText(copiado)
 
-    
   }
 
   
