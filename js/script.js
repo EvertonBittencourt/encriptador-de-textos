@@ -10,7 +10,7 @@ function criptografar() {
     // criando uma função para validar se há texto
     function validaTexto() {
         if (texto == '') {
-            throw new Error ('É obrigatório ter uma palavra')
+            throw new Error ('É obrigatório ter uma palavra.')
         } 
     }
 
@@ -29,20 +29,15 @@ function criptografar() {
 
     resultado1.innerHTML =  novoTexto
 
-    // desabilitando a imagem do detetive após a criptografia ser realizada
+    // desabilitando a imagem do detetive e habilitando o botão copiar após a criptografia ser realizada
     if (texto == ''){
-    nEncontrado.classList.remove('hide');
+        nEncontrado.classList.remove('hide');
+        let copy = document.getElementById('copiar').style.display = "none"
     } else {
         nEncontrado.classList.add('hide');
+        let copy = document.getElementById('copiar').style.display = "initial"
     }
-
-    // botão copiar aparece após a criptografia ser realizada
-    if (texto == ''){
-    let copy = document.getElementById('copiar').style.display = "none"
-    } else {
-    let copy = document.getElementById('copiar').style.display = "initial"
-    }
-
+   
 }
 
 
@@ -57,8 +52,21 @@ function descriptografar() {
     .replace(/ufat/g, "u");
 
     resultado1.innerHTML =  voltaTexto
-    
+
+    function validaTexto() {
+        if (texto == '') {
+            throw new Error ('É obrigatório ter uma palavra.')
+        } 
+    }
+
+    try {
+        validaTexto()
+    } catch (error) {
+        alert (error.message)
+    }
+
 }
+
 
 function copiar() {
 
